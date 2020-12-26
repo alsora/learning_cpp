@@ -9,3 +9,9 @@ https://docs.docker.com/docker-for-mac/install/
 and git
 
 https://www.atlassian.com/git/tutorials/install-git
+
+Open a terminal to verify the installation was successful:
+
+```bash
+$ git --version
+```
