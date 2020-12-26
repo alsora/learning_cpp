@@ -41,3 +41,20 @@ and the same applies to the e-mail, that is
 $ git config --global user.email
 youremail@something.com
 ```
+
+Now, we go to the desired directory on our pc, where we clone this repository. I created the desired folder "Programming", therefore what I do is
+```bash
+$ cd Programming
+$ git clone https://github.com/ilarioazzollini/learning_cpp.git
+```
+which should result in the creation of a new folder "learning_cpp" (which contains everything you see in this repo), inside the desired folder "Programming". If everything goes well, by using
+```bash
+$ git status
+```
+we should get
+```bash
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+```
