@@ -21,8 +21,23 @@ What I get as an output is
 ```bash
 git version 2.15.0
 ```
-which tells me everything is fine. Now to set your git username and email 
+which tells me everything is fine.
+
+Now set your git username and email:
 ```bash
 $ git config --global user.name "YourUserName"
-$ git config --global user.email "YourEmail@something.com"
+$ git config --global user.email "youremail@something.com"
+```
+and check everything is fine by
+```bash
+$ git config --global user.name
+```
+which should result in
+```bash
+YourUserName
+```
+and the same applies to the e-mail, that is
+```bash
+$ git config --global user.email
+youremail@something.com
 ```
