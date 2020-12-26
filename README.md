@@ -2,6 +2,8 @@
 
 I decided it was about time for me to start learning git, docker, and cpp. Let's see where this brings me!
 
+## 0. First steps
+
 I'm working on a Macbook. First of all, I downloaded and installed docker
 
 https://docs.docker.com/docker-for-mac/install/
