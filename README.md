@@ -12,7 +12,7 @@ and git
 
 https://www.atlassian.com/git/tutorials/install-git
 
-Open a terminal to verify the installation was successful:
+Open a terminal to verify the installation was successful by
 ```bash
 $ git --version
 ```
@@ -42,16 +42,17 @@ $ git config --global user.email
 youremail@something.com
 ```
 
-Now, we go to the desired directory on our pc, where we clone this repository. I created the desired folder "Programming", therefore what I do is
+Now, go to the desired directory on your pc, where you want to clone this repository. My desired folder is "Programming", therefore what I do is
 ```bash
 $ cd Programming
 $ git clone https://github.com/ilarioazzollini/learning_cpp.git
 ```
 which should result in the creation of a new folder "learning_cpp" (which contains everything you see in this repo), inside the desired folder "Programming". If everything goes well, by using
 ```bash
+$ cd learning_cpp
 $ git status
 ```
-we should get
+you should get
 ```bash
 On branch main
 Your branch is up to date with 'origin/main'.
