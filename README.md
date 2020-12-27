@@ -61,4 +61,7 @@ nothing to commit, working tree clean
 ```
 ## 1. The docker folder
 
-tbd...
+What is docker, you ask? You can find a clear overview in Alberto's blog
+https://alsora.github.io/2020-11-07-docker/
+
+Now we are ready to start using it...
