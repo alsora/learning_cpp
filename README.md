@@ -63,10 +63,12 @@ Your branch is up to date with 'origin/main'.
 
 nothing to commit, working tree clean
 ```
+**Note:** What you clone is obviously the final product (or, at least, the current version) of my work. In the following, I will not only describe how to run what you download, but how to develop the single files. In fact, I am actually writing this description at the same time as I am developing the code.
+
 ## 1. The docker folder
 
 What is docker, you ask? You can find a clear overview in Alberto's blog
 
 https://alsora.github.io/2020-11-07-docker/
 
-Open Visual Studio Code and open the folder "learning_cpp" you created by cloning this repo...
+Open Visual Studio Code and, from there, open the folder "learning_cpp" you created by cloning this repo...
