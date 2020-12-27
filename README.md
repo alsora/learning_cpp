@@ -63,7 +63,7 @@ Your branch is up to date with 'origin/main'.
 
 nothing to commit, working tree clean
 ```
-**Note:** What you clone is obviously the final product (or, at least, the current version) of my work. In the following, I will not only describe how to run what you download, but how to develop the single files. In fact, I am actually writing this readme file at the same time as I am developing the code.
+**NOTE:** What you clone is obviously the final product (or, at least, the current version) of my work. In the following, I will not only describe how to run what you download, but how to develop the single files. In fact, I am actually writing this readme file at the same time as I am developing the code.
 
 ## 1. The docker folder
 
