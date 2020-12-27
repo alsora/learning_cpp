@@ -8,11 +8,15 @@ I'm working on a Macbook. First of all, I downloaded and installed docker
 
 https://docs.docker.com/docker-for-mac/install/
 
-and git
+git
 
 https://www.atlassian.com/git/tutorials/install-git
 
-Open a terminal to verify the installation was successful by
+and Visual Studio Code
+
+https://code.visualstudio.com/
+
+Open a terminal to verify the git installation was successful by
 ```bash
 $ git --version
 ```
@@ -25,8 +29,8 @@ which tells me everything is fine.
 
 Now set your git username and email:
 ```bash
-$ git config --global user.name "YourUserName"
-$ git config --global user.email "youremail@something.com"
+$ git config --global user.name "USERNAME"
+$ git config --global user.email "email@something.com"
 ```
 and check everything is fine by
 ```bash
@@ -34,12 +38,12 @@ $ git config --global user.name
 ```
 which should result in
 ```bash
-YourUserName
+USERNAME
 ```
 and the same applies to the e-mail, that is
 ```bash
 $ git config --global user.email
-youremail@something.com
+email@something.com
 ```
 
 Now, go to the desired directory on your pc, where you want to clone this repository. My desired folder is "Programming", therefore what I do is
@@ -65,4 +69,4 @@ What is docker, you ask? You can find a clear overview in Alberto's blog
 
 https://alsora.github.io/2020-11-07-docker/
 
-Now we are ready to start using it...
+Open Visual Studio Code and open the folder "learning_cpp" you created by cloning this repo...
