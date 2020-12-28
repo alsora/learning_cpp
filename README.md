@@ -1,8 +1,8 @@
-# Hello programming World!
+# Hello programming world!
 
 I decided it was about time for me to start learning git, docker, and cpp. Let's see where this brings me!
 
-## 0. First steps
+## 00. First steps
 
 I'm working on a Macbook. First of all, I downloaded and installed docker
 
@@ -65,7 +65,21 @@ nothing to commit, working tree clean
 ```
 **NOTE:** What you clone is obviously the final product (or, at least, the current version) of my work. In the following, I will not only describe how to run what you download, but how to develop the single files. In fact, I am actually writing this readme file at the same time as I am developing the code.
 
-## 1. The docker folder
+## 01. My first program: Hello programming world!
+
+Where do we want to start from? And why "Hello world!"?
+
+```cpp
+// my first program in C++
+#include <iostream>
+
+int main()
+{
+  std::cout << "Hello World!";
+}
+```
+
+...
 
 What is docker, you ask? You can find a clear overview in Alberto's blog
 
