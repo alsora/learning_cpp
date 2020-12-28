@@ -46,7 +46,7 @@ $ git config --global user.email
 email@something.com
 ```
 
-Now, go to the desired directory on your pc, where you want to clone this repository. My desired folder is "Programming", therefore what I do is
+Now, go to the desired folder on your pc, where you want to clone this repository. My desired folder is "Programming", therefore what I do is
 ```bash
 $ cd Programming
 $ git clone https://github.com/ilarioazzollini/learning_cpp.git
