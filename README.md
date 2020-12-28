@@ -2,9 +2,11 @@
 
 I decided it was about time for me to start learning git, docker, and cpp. Let's see where this brings me!
 
+What you find in the following can be directly applied as it is if you work on macOS, like I do.
+
 ## 00. First steps
 
-I'm working on a Macbook. First of all, I downloaded and installed docker
+First of all, download and install docker
 
 https://docs.docker.com/docker-for-mac/install/
 
@@ -67,15 +69,15 @@ nothing to commit, working tree clean
 
 ## 01. My first program: Hello programming world!
 
-Where do we want to start from? And why "Hello world!"?
+...[WORK IN PROGRESS FROM HERE]...
 
 ```cpp
-// my first program in C++
+// my first program in cpp
 #include <iostream>
 
 int main()
 {
-  std::cout << "Hello World!";
+  std::cout << "Hello programming world!";
 }
 ```
 
