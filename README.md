@@ -69,11 +69,60 @@ nothing to commit, working tree clean
 
 ## 01. My first program: Hello programming world!
 
-The idea from now on is to work on my local folder "learning_cpp" on my pc, then anytime I have some new file which I consider sort of "completed", I will push it on github. This will also hold for this readme.md file you are currently reading. In fact, up to now I have been writing directly on the github website, which is not the best solution. This means my "offline" readme.md file on my computer is not up to date. Before continuing, I solve this issue right away by opening a terminal and
+The idea from now on is to work on my local folder "learning_cpp" on my pc, then anytime I have some new file which I consider sort of "completed", I will push it on github. This will also hold for this readme.md file you are currently reading. In fact, up to now I have been writing directly on the github website (like the noob I feel I am), which is not the best solution. This means my "offline" readme.md file on my computer is not up to date. Before continuing, I solve this issue right away by opening a terminal and
 
 ```bash
 $ cd Programming/learning_cpp
 $ git pull
 ```
 
-which results in...
+which results in something like
+
+```bash
+remote: Enumerating objects: 8, done.
+remote: Counting objects: 100% (8/8), done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 6 (delta 2), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (6/6), done.
+From https://github.com/ilarioazzollini/learning_cpp
+   e803dca..fb5b376  main       -> origin/main
+Updating e803dca..fb5b376
+Fast-forward
+ README.md | 25 ++++++++-----------------
+ 1 file changed, 8 insertions(+), 17 deletions(-)
+ ```
+
+ From now on, I'm working on my local folder "learning_cpp" on my pc, and pushing any new files or modifications online to github, whenever I feel the need to do so.
+
+ Now, I want to create a new folder inside the "learning_cpp" folder, and call it "01myfirstprogram".
+
+```bash
+$ cd Programming/learning_cpp
+$ mkdir 01myfirstprogram
+```
+
+Let's check what's inside the learning_cpp folder
+
+```bash
+$ ls
+01myfirstprogram	LICENSE			README.md
+```
+
+Now, let's open the 01myfirstprogram folder in visual studio code, and create a new file hello_programming_world.cpp
+
+```cpp
+// my first program in cpp
+#include <iostream>
+
+int main()
+{
+  std::cout << "Hello programming world! \n";
+}
+```
+
+There is nothing more to be done in terms of files to be created. Next I will use docker to run an image of ubuntu 20.04 where I will compile and run the .cpp program using g++. But first, I want to add and push the developed folder 01myfirstprogram to my github. I can first check the git status of my learning_cpp folder
+
+```bash
+$ cd Programming/learning_cpp
+$ git status
+```
