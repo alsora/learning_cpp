@@ -6,7 +6,7 @@ What you find in the following can be directly applied as it is if you work on m
 
 ## 00. First steps
 
-First of all, download and install docker
+First of all, I download and install docker
 
 https://docs.docker.com/docker-for-mac/install/
 
@@ -69,22 +69,11 @@ nothing to commit, working tree clean
 
 ## 01. My first program: Hello programming world!
 
-...[WORK IN PROGRESS FROM HERE]...
+The idea from now on is to work on my local folder "learning_cpp" on my pc, then anytime I have some new file which I consider sort of "completed", I will push it on github. This will also hold for this readme.md file you are currently reading. In fact, up to now I have been writing directly on the github website, which is not the best solution. This means my "offline" readme.md file on my computer is not up to date. Before continuing, I solve this issue right away by opening a terminal and
 
-```cpp
-// my first program in cpp
-#include <iostream>
-
-int main()
-{
-  std::cout << "Hello programming world!";
-}
+```bash
+$ cd Programming/learning_cpp
+$ git pull
 ```
 
-...
-
-What is docker, you ask? You can find a clear overview in Alberto's blog
-
-https://alsora.github.io/2020-11-07-docker/
-
-Open Visual Studio Code and, from there, open the folder "learning_cpp" you created by cloning this repo...
+which results in...
