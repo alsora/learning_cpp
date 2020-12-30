@@ -120,7 +120,7 @@ int main()
 }
 ```
 
-There is nothing more to be done in terms of files to be created. Next I will use docker to run an image of ubuntu 20.04 where I will compile and run the .cpp program using g++. But first, I want to add and push the developed folder 01myfirstprogram to my github. I can first check the git status of my learning_cpp folder
+There is nothing more to be done in terms of files to be created. Next I will use docker to run an image of ubuntu 20.04 where I will compile and run the .cpp program using g++. But first I want to add, commit, and push the developed folder 01myfirstprogram to my github. I can first check the git status of my learning_cpp folder (I suggest to frequently use git status)
 
 ```bash
 $ cd Programming/learning_cpp
@@ -141,4 +141,17 @@ Untracked files:
 	01myfirstprogram/
 
 no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+Now I can add both the modified file and the new file
+
+```bash
+$ git add README.md 01myfirstprogram
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   01myfirstprogram/hello_programming_world.cpp
 ```
