@@ -147,11 +147,60 @@ Now I can add both the modified file and the new file
 
 ```bash
 $ git add README.md 01myfirstprogram
+$ git status
 On branch main
 Your branch is up to date with 'origin/main'.
 
 Changes to be committed:
   (use "git reset HEAD <file>..." to unstage)
 
+  modified:   README.md
 	new file:   01myfirstprogram/hello_programming_world.cpp
 ```
+
+Then commit everything with the attached message "My first commit from my pc", resulting in something like this
+
+```bash
+$ git commit -m "My first commit from my pc"
+
+[main 78cb43e] My first commit from my pc
+ 2 files changed, 21 insertions(+), 1 deletion(-)
+ create mode 100644 01myfirstprogram/hello_programming_world.cpp
+```
+
+resulting in a git status
+
+```bash
+$ git status
+
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+```
+
+Now we are ready to push everything online on github (github username and password will be asked)
+
+```bash
+$ git push https://github.com/ilarioazzollini/learning_cpp.git main
+
+Counting objects: 5, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (5/5), 757 bytes | 757.00 KiB/s, done.
+Total 5 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/ilarioazzollini/learning_cpp.git
+   9fa0bdc..78cb43e  main -> main
+
+nothing to commit, working tree clean
+```
+
+As you can notice, the general syntax is
+```bash
+$ git push <url> <branch>
+```
+
+anyway, after the first push, we can simply use "git push" without specifying anything else. In this case, the local commits ready to be published, will be automatically pushed online to the last chosen url and branch (which is the current working branch).
+
