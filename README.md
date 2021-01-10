@@ -204,3 +204,17 @@ $ git push <url> <branch>
 
 anyway, after the first push, we can simply use "git push" without specifying anything else. In this case, the local commits ready to be published, will be automatically pushed online to the last chosen url and branch (which is the current working branch).
 
+### Running the program in Ubuntu using docker (basic usage)
+
+First things first, what is Docker? A tour to the following website is suggested
+
+https://docs.docker.com/
+
+We will actually follow Alberto's blog
+
+https://alsora.github.io/2020-11-07-docker/
+
+
+### Running the program in Ubuntu using docker (write your dockerfile)
+
+tbd...
