@@ -214,7 +214,68 @@ We will actually follow Alberto's blog
 
 https://alsora.github.io/2020-11-07-docker/
 
+We want to create and run a container with ubuntu 20.04 in it. In particular, we want to run an interactive bash session, as if we were working on an ubuntu 20.04 OS. From there, we will use g++ to compile and run our program.
 
-### Running the program in Ubuntu using docker (write your dockerfile)
+First, we download the Docker image of ubuntu 20.04
+```bash
+$ docker pull ubuntu:20.04
+```
 
-tbd...
+Once this is completed, we run an interactive bash session by
+```bash
+$ docker run -it -v /Users/ilarioazzollini/Programming/learning_cpp:/root/learning_cpp ubuntu:20.04 bash
+```
+where we want to carry to our ubuntu session the folder learning_cpp. In particular we are telling docker to take what is inside /Users/ilarioazzollini/Programming/learning_cpp and bringing it inside the ubuntu container at location /root/learning_cpp.
+
+Now you are witnessing the magic: we are in ubuntu 20.04. Let's install some basic utilities
+```bash
+$ apt-get update && apt-get install -y build-essential
+```
+
+and check that g++ is present
+```bash
+$ g++ --version
+```
+
+Now let's run the program! It's exactly located where we expect it to be, in fact the learning_cpp we have in our ubuntu image is exactly the one we prepared in macOS. So we just
+```bash
+$ cd root/learning_cpp/01myfirstprogram
+$ g++ hello_programming_world.cpp -o output
+$ ./output
+```
+and we get what we decided to call "output", which is indeed the output we get by running our hello_programming_world.cpp program. We should see simply
+```bash
+Hello programming world!
+```
+
+Now, we exit from this container (or interactive session) we created, and go back to our macOS terminal by
+```bash
+$ exit
+```
+
+Be careful as this does not automatically means the container does not exist anymore. In fact we can always check the general docker situation by
+```bash
+$ docker ps -a
+```
+For instance what I am getting right now is
+```bash
+CONTAINER ID   IMAGE          COMMAND   CREATED          STATUS                          PORTS     NAMES
+cf4280894278   ubuntu:20.04   "bash"    10 minutes ago   Exited (0) About a minute ago             optimistic_kilby
+```
+which tells me there exist one container with an ubuntu 20.04 image in it, in particular running an interactive bash.
+
+In order to delete this container we use the command "rm" followed by the container ID, for instance in my case
+```bash
+$ docker rm cf4280894278
+```
+Now, this first part about basic usage of git and docker is done. Let's add, commit and push everything done up to here. Then we will start using both git and docker more like adults.
+
+We open a terminal and, similarly to what we already did before, we go to our local folder, check with git status what we have changed and need to add, commit and push, and then we do that
+```bash
+$ cd Programming/learning_cpp
+$ git status
+$ git add README.md 01myfirstprogram/output
+$ git commit -m "Basic usage part: completed"
+$ git push
+```
+
