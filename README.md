@@ -262,7 +262,7 @@ For instance what I am getting right now is
 CONTAINER ID   IMAGE          COMMAND   CREATED          STATUS                          PORTS     NAMES
 cf4280894278   ubuntu:20.04   "bash"    10 minutes ago   Exited (0) About a minute ago             optimistic_kilby
 ```
-which tells me there exist one container with an ubuntu 20.04 image in it, in particular running an interactive bash.
+which tells me there exists one container with an ubuntu 20.04 image in it, in particular running an interactive bash.
 
 In order to delete this container we use the command "rm" followed by the container ID, for instance in my case
 ```bash
@@ -270,12 +270,34 @@ $ docker rm cf4280894278
 ```
 Now, this first part about basic usage of git and docker is done. Let's add, commit and push everything done up to here. Then we will start using both git and docker more like adults.
 
-We open a terminal and, similarly to what we already did before, we go to our local folder, check with git status what we have changed and need to add, commit and push, and then we do that
+We open a terminal and, similarly to what we already did before, we go to our local folder, check with git status what we have changed and need to add, commit and push (do not add the "output" file, it's useless)
 ```bash
 $ cd Programming/learning_cpp
 $ git status
-$ git add README.md 01myfirstprogram/output
+$ git add README.md
 $ git commit -m "Basic usage part: completed"
 $ git push
 ```
 
+### Running the program in Ubuntu using docker (write your dockerfile)
+
+First of all, let us create a new branch where we will work (and add, and commit, and push) while maintaining the main branch unchanged. This is good practice so that we may mess everything up as much as we want in our new branch, while having the last fully working version of the work safe in the main branch. It may not make much difference for this particular work, where I am working alone, but this approach helps even more when working in a team. We will create a branch, where we will develop the dockerfile, still following Albi's blog. Only when we are sure that everything works as expected, we will create a pull request and then merge the pull request into the (upstream) main branch.
+
+Create and switch to the new branch "ilarioazzollini/dockerfolder-branch", and directly push it
+```bash
+$ cd Programming/learning_cpp
+$ git checkout -b ilarioazzollini/dockerfolder-branch
+$ git push
+```
+where git suggests to
+```bash
+fatal: The current branch ilarioazzollini/dockerfolder-branch has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ilarioazzollini/dockerfolder-branch
+```
+which is exactly what we need to do. After doing so, we check the status
+```bash
+$ git status
+
+```
