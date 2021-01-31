@@ -299,5 +299,8 @@ To push the current branch and set the remote as upstream, use
 which is exactly what we need to do. After doing so, we check the status
 ```bash
 $ git status
+On branch ilarioazzollini/dockerfolder-branch
+Your branch is up to date with 'origin/ilarioazzollini/dockerfolder-branch'.
 
+nothing to commit, working tree clean
 ```
