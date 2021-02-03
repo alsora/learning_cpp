@@ -48,12 +48,12 @@ $ git config --global user.email
 email@something.com
 ```
 
-Now, go to the desired folder on your pc, where you want to clone this repository. My desired folder is "Programming", therefore what I do is
+Now, go to the desired folder on your pc, where you want to clone this repository. My desired folder is `Programming`, therefore what I do is
 ```bash
 $ cd Programming
 $ git clone https://github.com/ilarioazzollini/learning_cpp.git
 ```
-which should result in the creation of a new folder "learning_cpp" (which contains everything you see in this repo), inside the desired folder "Programming". If everything goes well, by using
+which should result in the creation of a new folder `learning_cpp` (which contains everything you see in this repo), inside the desired folder `Programming`. If everything goes well, by using
 ```bash
 $ cd learning_cpp
 $ git status
@@ -65,11 +65,13 @@ Your branch is up to date with 'origin/main'.
 
 nothing to commit, working tree clean
 ```
-**NOTE:** What you clone is obviously the final product (or, at least, the current version) of my work. In the following, I will not only describe how to run what you download, but how to develop the single files. In fact, I am actually writing this readme file at the same time as I am developing the code.
+**NOTE:** By cloning a repository you are not only downloading the current version of its content, but also its previous history.
+It is also possible to just download the current version of this repo, but in this case what you will get on your machine will not be recognized by `git`.
+**NOTE:**  I will not only describe how to run what you download, but how to develop the single files. In fact, I am actually writing this readme file at the same time as I am developing the code.
 
 ## 01. My first program: Hello programming world!
 
-The idea from now on is to work on my local folder "learning_cpp" on my pc, then anytime I have some new file which I consider sort of "completed", I will push it on github. This will also hold for this readme.md file you are currently reading. In fact, up to now I have been writing directly on the github website (like the noob I feel I am), which is not the best solution. This means my "offline" readme.md file on my computer is not up to date. Before continuing, I solve this issue right away by opening a terminal and
+The idea from now on is to work on my local folder `learning_cpp` on my pc, then anytime I have some new file which I consider sort of "completed", I will push it on github. This will also hold for this `README.md` file you are currently reading. In fact, up to now I have been writing directly on the github website (like the noob I feel I am), which is not the best solution. This means my "offline" `README.md` file on my computer is not up to date. Before continuing, I solve this issue right away by opening a terminal and
 
 ```bash
 $ cd Programming/learning_cpp
@@ -92,23 +94,23 @@ Fast-forward
  1 file changed, 8 insertions(+), 17 deletions(-)
  ```
 
- From now on, I'm working on my local folder "learning_cpp" on my pc, and pushing any new files or modifications online to github, whenever I feel the need to do so.
+ From now on, I'm working on my local folder `learning_cpp` on my pc, and pushing any new files or modifications online to github, whenever I feel the need to do so.
 
- Now, I want to create a new folder inside the "learning_cpp" folder, and call it "01myfirstprogram".
+ Now, I want to create a new folder inside the `learning_cpp` folder, and call it `01myfirstprogram`.
 
 ```bash
 $ cd Programming/learning_cpp
 $ mkdir 01myfirstprogram
 ```
 
-Let's check what's inside the learning_cpp folder
+Let's check what's inside the `learning_cpp` folder
 
 ```bash
 $ ls
 01myfirstprogram	LICENSE			README.md
 ```
 
-Now, let's open the 01myfirstprogram folder in visual studio code, and create a new file hello_programming_world.cpp
+Now, let's open the `01myfirstprogram` folder in visual studio code, and create a new file `hello_programming_world.cpp`
 
 ```cpp
 // my first program in cpp
@@ -120,7 +122,7 @@ int main()
 }
 ```
 
-There is nothing more to be done in terms of files to be created. Next I will use docker to run an image of ubuntu 20.04 where I will compile and run the .cpp program using g++. But first I want to add, commit, and push the developed folder 01myfirstprogram to my github. I can first check the git status of my learning_cpp folder (I suggest to frequently use git status)
+There is nothing more to be done in terms of files to be created. Next I will use docker to run an image of ubuntu 20.04 where I will compile and run the .cpp program using g++. But first I want to add, commit, and push the developed folder `01myfirstprogram` to my github. I can first check the git status of my `learning_cpp` folder (I suggest to frequently use git status)
 
 ```bash
 $ cd Programming/learning_cpp
@@ -202,7 +204,7 @@ As you can notice, the general syntax is
 $ git push <url> <branch>
 ```
 
-anyway, after the first push, we can simply use "git push" without specifying anything else. In this case, the local commits ready to be published, will be automatically pushed online to the last chosen url and branch (which is the current working branch).
+anyway, after the first push, we can simply use `git push` without specifying anything else. In this case, the local commits ready to be published, will be automatically pushed online to the last chosen url and branch (which is the current working branch).
 
 ### Running the program in Ubuntu using docker (basic usage)
 
@@ -221,34 +223,39 @@ First, we download the Docker image of ubuntu 20.04
 $ docker pull ubuntu:20.04
 ```
 
-Once this is completed, we run an interactive bash session by
+Once this is completed, we create a container and run an interactive bash session by
 ```bash
 $ docker run -it -v /Users/ilarioazzollini/Programming/learning_cpp:/root/learning_cpp ubuntu:20.04 bash
 ```
-where we want to carry to our ubuntu session the folder learning_cpp. In particular we are telling docker to take what is inside /Users/ilarioazzollini/Programming/learning_cpp and bringing it inside the ubuntu container at location /root/learning_cpp.
+where we want to carry to our ubuntu session the folder `learning_cpp`. In particular we are telling docker to mount what is inside `/Users/ilarioazzollini/Programming/learning_cpp` as a volume inside the ubuntu container at location `/root/learning_cpp`.
+The syntax for the command consists in using the `-v` flag followed by the host path and the container path separated by a colon.
 
 Now you are witnessing the magic: we are in ubuntu 20.04. Let's install some basic utilities
 ```bash
 $ apt-get update && apt-get install -y build-essential
 ```
 
-and check that g++ is present
+Note that in a Docker container you usually don't need super user permissions (`sudo`) for running commands, as the user used to access the container already has those privileges by default.
+
+and check that the C++ compiler `g++` is now present
 ```bash
 $ g++ --version
 ```
 
-Now let's run the program! It's exactly located where we expect it to be, in fact the learning_cpp we have in our ubuntu image is exactly the one we prepared in macOS. So we just
+Now let's build and run the program! The source code is exactly located where we expect it to be, in fact the `learning_cpp` we have in our ubuntu image is exactly the one we prepared in macOS.
+So we just compile the program by running `g++`:
 ```bash
 $ cd root/learning_cpp/01myfirstprogram
 $ g++ hello_programming_world.cpp -o output
-$ ./output
 ```
-and we get what we decided to call "output", which is indeed the output we get by running our hello_programming_world.cpp program. We should see simply
+and we get an executable named `output`, since that's the name that we specified.
+We can run any generic executable by specifying its path in a Unix terminal, so we can simply do:
 ```bash
+$ ./output
 Hello programming world!
 ```
 
-Now, we exit from this container (or interactive session) we created, and go back to our macOS terminal by
+Now, we exit from this container we created, and go back to our macOS terminal by
 ```bash
 $ exit
 ```
@@ -264,7 +271,7 @@ cf4280894278   ubuntu:20.04   "bash"    10 minutes ago   Exited (0) About a minu
 ```
 which tells me there exist one container with an ubuntu 20.04 image in it, in particular running an interactive bash.
 
-In order to delete this container we use the command "rm" followed by the container ID, for instance in my case
+In order to delete this container we use the command `rm` followed by the container ID, for instance in my case
 ```bash
 $ docker rm cf4280894278
 ```
