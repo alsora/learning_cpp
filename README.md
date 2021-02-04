@@ -286,3 +286,85 @@ $ git commit -m "Basic usage part: completed"
 $ git push
 ```
 
+
+### Running the program in Ubuntu using docker (write your dockerfile)
+
+First of all, let us create a new branch where we will work (and add, and commit, and push) while maintaining the main branch unchanged. This is good practice so that we may mess everything up as much as we want in our new branch, while having the last fully working version of the work safe in the main branch. It may not make much difference for this particular work, where I am working alone, but this approach helps even more when working in a team. We will create a branch, where we will develop the dockerfile, still following Alberto's blog. Only when we are sure that everything works as expected, we will create a pull request and then merge the pull request into the (upstream) main branch.
+
+Create and switch to the new branch `ilarioazzollini/dockerfolder-branch`, and directly push it
+```bash
+$ cd Programming/learning_cpp
+$ git checkout -b ilarioazzollini/dockerfolder-branch
+$ git push
+```
+where git suggests to
+```bash
+fatal: The current branch ilarioazzollini/dockerfolder-branch has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ilarioazzollini/dockerfolder-branch
+```
+which is exactly what we need to do. After doing so, we check the status
+```bash
+$ git status
+On branch ilarioazzollini/dockerfolder-branch
+Your branch is up to date with 'origin/ilarioazzollini/dockerfolder-branch'.
+
+nothing to commit, working tree clean
+```
+
+Now let's create a new folder
+```bash
+$ mkdir basic_ubuntu_dockerfolder
+```
+where, following Alberto's blog, we will have a Dockerfile
+```dockerfile
+FROM ubuntu:20.04
+
+ENV HOME /root
+
+WORKDIR $HOME
+
+RUN apt-get update && apt-get install -y \
+    build-essential
+```
+
+together with a shell file `build.sh`
+```bash
+docker build -t custom_ubuntu .
+```
+
+and another shell file: the  `run.sh`
+```bash
+docker run -it --rm -v /Users/ilarioazzollini/Programming/learning_cpp:/root/learning_cpp custom_ubuntu bash
+```
+where, we also added the `--rm` option, in order to automatically delete the container once we exit.
+
+Now, we could use the developed files to quickly create and run an interactive ubuntu container by
+```bash
+$ cd Programming/learning_cpp/basic_ubuntu_dockerfolder
+$ bash build.sh
+$ bash run.sh
+```
+and we are in ubuntu, in particular in the root folder (as specified in the dockerfile). Exactly as before, we can run our program by
+```bash
+$ cd learning_cpp/01myfirstprogram
+$ g++ hello_programming_world.cpp -o output
+$ ./output
+```
+resulting in the same output as before
+```bash
+Hello programming world!
+```
+Now, if we exit and we check the docker situation
+```bash
+$ exit
+$ docker ps -a
+```
+we get simply
+```bash
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+```
+meaning there are no open and/or active containers, as desired.
+
+This concludes our work for now. Everything works as expected so we can push this result on github. Then, we can create a pull request and merge this branch in to the main branch.
