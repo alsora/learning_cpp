@@ -1,1 +1,1 @@
-docker run -it --rm -v /Users/ilarioazzollini/Albi_prog:/root/Albi_prog custom_ubuntu bash
+docker run -it --rm -v /Users/ilarioazzollini/Programming/learning_cpp:/root/learning_cpp custom_ubuntu bash

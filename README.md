@@ -313,7 +313,7 @@ Your branch is up to date with 'origin/ilarioazzollini/dockerfolder-branch'.
 nothing to commit, working tree clean
 ```
 
-Now let us create a new folder
+Now let's create a new folder
 ```bash
 $ mkdir basic_ubuntu_dockerfolder
 ```
@@ -329,13 +329,42 @@ RUN apt-get update && apt-get install -y \
     build-essential
 ```
 
-<pre><code class="dockerfile">
-FROM ubuntu:20.04
+together with a shell file `build.sh`
+```bash
+docker build -t custom_ubuntu .
+```
 
-ENV HOME /root
+and another shell file: the  `run.sh`
+```bash
+docker run -it --rm -v /Users/ilarioazzollini/Programming/learning_cpp:/root/learning_cpp custom_ubuntu bash
+```
+where, we also added the `--rm` option, in order to automatically delete the container once we exit.
 
-WORKDIR $HOME
+Now, we could use the developed files to quickly create and run an interactive ubuntu container by
+```bash
+$ cd Programming/learning_cpp/basic_ubuntu_dockerfolder
+$ bash build.sh
+$ bash run.sh
+```
+and we are in ubuntu, in particular in the root folder (as specified in the dockerfile). Exactly as before, we can run our program by
+```bash
+$ cd learning_cpp/01myfirstprogram
+$ g++ hello_programming_world.cpp -o output
+$ ./output
+```
+resulting in the same output as before
+```bash
+Hello programming world!
+```
+Now, if we exit and we check the docker situation
+```bash
+$ exit
+$ docker ps -a
+```
+we get simply
+```bash
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+```
+meaning there are no open and/or active containers, as desired.
 
-RUN apt-get update && apt-get install -y \
-    build-essential
-</code></pre>
+This concludes our work for now. Everything works as expected so we can push this result on github. Then, we can create a pull request and merge this branch in to the main branch.
