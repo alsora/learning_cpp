@@ -1,0 +1,1 @@
+docker run -it --rm -v /Users/ilarioazzollini/Albi_prog:/root/Albi_prog custom_ubuntu bash
