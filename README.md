@@ -113,12 +113,19 @@ $ ls
 Now, let's open the `01myfirstprogram` folder in visual studio code, and create a new file `hello_programming_world.cpp`
 
 ```cpp
-// my first program in cpp
+/*
+My first program in C++: Hello programming world!
+I.A. Azzollini
+*/
+
+// Description: this program outputs the message "Hello programming world!" to the monitor
+
 #include <iostream>
 
 int main()
 {
-  std::cout << "Hello programming world! \n";
+  std::cout << "Hello programming world!\n";
+  return 0;
 }
 ```
 
