@@ -1,0 +1,1 @@
+docker run -it --rm -v /Users/ilarioazzollini/Programming/learning_cpp/01myfirstprogram:/root/01myfirstprogram custom_ubuntu bash
