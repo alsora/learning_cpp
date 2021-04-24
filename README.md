@@ -374,6 +374,11 @@ CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 ```
 meaning there are no open and/or active containers, as desired.
 
-This concludes our work for now. Everything works as expected so we can push this result on github. Then, we can create a pull request and merge this branch in to the main branch.
+This concludes our work for now. Everything works as expected so we can push this result on github. Then, we can create a pull request and merge this branch into the main branch. Once we do that, we have to switch back to the main branch also locally on our pc, by running one by one the following commands
+
+```bash
+$ git checkout main
+$ git pull
+```
 
 Now, we will go more in depth with git, linux terminal, docker, and obviously we will start cpp programming. For better organization we will work in dedicated folders, each one having its own associated readme file.
