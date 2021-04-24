@@ -1,0 +1,1 @@
+docker run -it --rm -v /Users/ilarioazzollini/Programming/learning_cpp/04moderncppcourse:/root/04moderncppcourse ubuntu_moderncpp bash

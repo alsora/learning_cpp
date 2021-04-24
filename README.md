@@ -1,10 +1,10 @@
 # Hello programming world!
 
-I decided it was about time for me to start learning git, docker, and cpp. Let's see where this brings me!
+I decided it was about time for me to start learning linux, git, docker, and cpp. Let's see where this brings me!
 
 What you find in the following can be directly applied as it is if you work on macOS, like I do.
 
-## 00. First steps
+## 1. First steps
 
 First of all, I download and install docker
 
@@ -69,7 +69,7 @@ nothing to commit, working tree clean
 It is also possible to just download the current version of this repo, but in this case what you will get on your machine will not be recognized by `git`.
 **NOTE:**  I will not only describe how to run what you download, but how to develop the single files. In fact, I am actually writing this readme file at the same time as I am developing the code.
 
-## 01. My first program: Hello programming world!
+## 2. My first program: Hello programming world!
 
 The idea from now on is to work on my local folder `learning_cpp` on my pc, then anytime I have some new file which I consider sort of "completed", I will push it on github. This will also hold for this `README.md` file you are currently reading. In fact, up to now I have been writing directly on the github website (like the noob I feel I am), which is not the best solution. This means my "offline" `README.md` file on my computer is not up to date. Before continuing, I solve this issue right away by opening a terminal and
 
@@ -213,9 +213,9 @@ $ git push <url> <branch>
 
 anyway, after the first push, we can simply use `git push` without specifying anything else. In this case, the local commits ready to be published, will be automatically pushed online to the last chosen url and branch (which is the current working branch).
 
-### Running the program in Ubuntu using docker (basic usage)
+## 3. Running the program using docker (basic usage)
 
-First things first, what is Docker? A tour to the following website is suggested
+First things first, what is docker? A tour to the following website is suggested
 
 https://docs.docker.com/
 
@@ -225,7 +225,7 @@ https://alsora.github.io/2020-11-07-docker/
 
 We want to create and run a container with ubuntu 20.04 in it. In particular, we want to run an interactive bash session, as if we were working on an ubuntu 20.04 OS. From there, we will use g++ to compile and run our program.
 
-First, we download the Docker image of ubuntu 20.04
+First, we download the docker image of ubuntu 20.04
 ```bash
 $ docker pull ubuntu:20.04
 ```
@@ -242,7 +242,7 @@ Now you are witnessing the magic: we are in ubuntu 20.04. Let's install some bas
 $ apt-get update && apt-get install -y build-essential
 ```
 
-Note that in a Docker container you usually don't need super user permissions (`sudo`) for running commands, as the user used to access the container already has those privileges by default.
+Note that in a docker container you usually don't need super user permissions (`sudo`) for running commands, as the user used to access the container already has those privileges by default.
 
 and check that the C++ compiler `g++` is now present
 ```bash
@@ -293,7 +293,7 @@ $ git commit -m "Basic usage part: completed"
 $ git push
 ```
 
-### Running the program in Ubuntu using docker (write your dockerfile)
+## 4. Running the program using docker (write your dockerfile)
 
 First of all, let us create a new branch where we will work (and add, and commit, and push) while maintaining the main branch unchanged. This is good practice so that we may mess everything up as much as we want in our new branch, while having the last fully working version of the work safe in the main branch. It may not make much difference for this particular work, where I am working alone, but this approach helps even more when working in a team. We will create a branch, where we will develop the dockerfile, still following Alberto's blog. Only when we are sure that everything works as expected, we will create a pull request and then merge the pull request into the (upstream) main branch.
 
@@ -324,7 +324,7 @@ Now let's create a new folder
 $ cd 01myfirstprogram
 $ mkdir basic_ubuntu_dockerfolder
 ```
-where, following Alberto's blog, we will have a Dockerfile
+where, following Alberto's blog, we will have a `Dockerfile`
 ```dockerfile
 FROM ubuntu:20.04
 
@@ -376,21 +376,4 @@ meaning there are no open and/or active containers, as desired.
 
 This concludes our work for now. Everything works as expected so we can push this result on github. Then, we can create a pull request and merge this branch in to the main branch.
 
-## 02. Modern C++ Course
-
-Now I am following the following Modern C++ course 
-
-2018 recordings:
-https://www.ipb.uni-bonn.de/teaching/modern-cpp/
-
-2020 recordings:
-https://www.ipb.uni-bonn.de/cpp-course-2020/
-
-together with the suggested video tutorials on how to use a linux terminal
-
-https://www.youtube.com/watch?v=oxuRxtrO2Ag&feature=youtu.be
-
-and pipes and redirection
-
-https://www.youtube.com/watch?v=mV_8GbzwZMM&feature=youtu.be
-
+Now, we will go more in depth with git, linux terminal, docker, and obviously we will start cpp programming. For better organization we will work in dedicated folders, each one having its own associated readme file.
